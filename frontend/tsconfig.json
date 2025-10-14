@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/Header/[[...header]]/page.tsx", "app/admin/document/[[...document]]/Home.tsx", "app/admin/profile/[[...profile]]/Home.tsx", "app/admin/structure/[[...structure]]/Home.tsx", "app/citoyen/extrait/[[...extrait]]/TemplateExtrait.js"],
+  "exclude": ["node_modules"]
+}

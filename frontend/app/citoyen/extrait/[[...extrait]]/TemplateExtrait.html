@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extrait de Naissance Dynamique</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid black;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      text-decoration: underline;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .signature, .empreintes {
+      border-top: 1px solid black;
+      text-align: center;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+    .logo {
+      display: block;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      background: url('logo.png') no-repeat center;
+      background-size: contain;
+    }
+    .editable {
+      border: none;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo"></div>
+  <h1>Extrait de Naissance </h1>
+  <div class="section">
+    <p><strong>Nom:</strong> <span contenteditable="true" class="editable">{{nomDemandeur}}</span></p>
+    <p><strong>Prénoms:</strong> <span contenteditable="true" class="editable">{{prenomsDemandeur}}</span></p>
+    <p><strong>Date de Naissance:</strong> <span contenteditable="true" class="editable">{{dateNaissance}}</span></p>
+    <p><strong>Lieu de Naissance:</strong> <span contenteditable="true" class="editable">{{lieuNaissance}}</span></p>
+  </div>
+  <div class="empreintes">
+    <p><strong>Nom du Père:</strong> <span contenteditable="true" class="editable">{{nomPere}}</span></p>
+    <p><strong>Prénoms du Père:</strong> <span contenteditable="true" class="editable">{{prenomsPere}}</span></p>
+  </div>
+  <div class="empreintes">
+    <p><strong>Nom de la Mère:</strong> <span contenteditable="true" class="editable">{{nomMere}}</span></p>
+    <p><strong>Prénoms de la Mère:</strong> <span contenteditable="true" class="editable">{{prenomsMere}}</span></p>
+  </div>
+  <div class="empreintes">
+    <p><strong>Sexe:</strong> <span contenteditable="true" class="editable">{{sexe}}</span></p>
+    <p><strong>Numéro d'Identification:</strong> <span contenteditable="true" class="editable">{{numeroIdentification}}</span></p>
+  </div>
+  <div class="signature">
+    <p><strong>Signature de l'Officier d'État Civil</strong></p>
+  </div>
+  <div class="empreintes">
+    <p><strong>Le maire</strong></p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const editableElements = document.querySelectorAll('.editable');
+      editableElements.forEach(element => {
+        element.addEventListener('blur', function() {
+          alert('Donnée modifiée: ' + this.textContent);
+          // Ici, vous pouvez ajouter du code pour sauvegarder la modification
+        });
+      });
+    });
+  </script>
+</body>
+</html>
